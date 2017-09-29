@@ -23,3 +23,9 @@ extension QuadTreeBounds {
     self.minY = -1
   }
 }
+
+extension QuadTreeBounds: Equatable {
+  static func  == (lhs: QuadTreeBounds, rhs: QuadTreeBounds) -> Bool {
+    return lhs.maxX == rhs.maxX && lhs.maxY == rhs.maxY && lhs.minX == rhs.minX && lhs.minY == rhs.minY
+  }
+}

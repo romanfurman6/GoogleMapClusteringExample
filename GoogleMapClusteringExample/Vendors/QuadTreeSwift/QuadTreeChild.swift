@@ -73,7 +73,7 @@ class QuadTreeChild: QuadTreeChildProtocol {
     }
   }
 
-  func addTo(childPosition: ChildPosition, item: QuadTreeItem, bounds: QuadTreeBounds, depth: UInt) {
+  private func addTo(childPosition: ChildPosition, item: QuadTreeItem, bounds: QuadTreeBounds, depth: UInt) {
     let childBounds = getBounds(of: childPosition)
     let newDepth = depth + 1
     switch childPosition {
@@ -88,33 +88,52 @@ class QuadTreeChild: QuadTreeChildProtocol {
     }
   }
 
-  private func addToTop(right: Bool, item: QuadTreeItem, bounds: QuadTreeBounds, depth: UInt) {
-    if right {
-      topRight?.add(item, with: bounds, at: depth + 1)
-    } else {
-      topLeft?.add(item, with: bounds, at: depth + 1)
-    }
-  }
-  private func addToBottom(right: Bool, item: QuadTreeItem, bounds: QuadTreeBounds, depth: UInt) {
-    if right {
-      bottomRight?.add(item, with: bounds, at: depth + 1)
-    } else {
-      bottomLeft?.add(item, with: bounds, at: depth + 1)
+  private func remove(from position: ChildPosition, item: QuadTreeItem, with bounds: QuadTreeBounds) -> Bool {
+    guard
+      let topRight = topRight,
+      let topLeft = topLeft,
+      let bottomRight = bottomRight,
+      let bottomLeft = bottomLeft
+    else { return false }
+
+    switch position {
+    case let .topRight(parentBounds):
+      return topRight.remove(item, with: parentBounds)
+    case let .topLeft(parentBounds):
+      return topLeft.remove(item, with: parentBounds)
+    case let .bottomRight(parentBounds):
+      return bottomRight.remove(item, with: parentBounds)
+    case let .bottomLeft(parentBounds):
+      return bottomLeft.remove(item, with: parentBounds)
     }
   }
 
   func remove(_ item: QuadTreeItem, with bounds: QuadTreeBounds) -> Bool {
-//    if topRight != nil {
-//      let itemPoint = item.point
-//      let midPoint = getMidPoint(from: bounds)
-//
-//
-//    }
-    return true
+    if topRight != nil {
+      let itemPoint = item.point
+      let midPoint = getMidPoint(from: bounds)
+      var childPosition: ChildPosition!
+
+      if itemPoint.y > midPoint.y {
+        let value = itemPoint.x > midPoint.x
+        childPosition = value ? .topRight(parentBounds: bounds) : .topLeft(parentBounds: bounds)
+      } else {
+        let value = itemPoint.x > midPoint.x
+        childPosition = value ? .bottomRight(parentBounds: bounds) : .bottomLeft(parentBounds: bounds)
+      }
+      return remove(from: childPosition, item: item, with: bounds)
+    }
+    let index = items.index(where: { return $0 == item })
+    if let index = index {
+      items.remove(at: index)
+    }
+    return false
   }
+
   func search(with bounds: QuadTreeBounds) -> [QuadTreeItem] {
     return []
   }
+
   func split(with bounds: QuadTreeBounds, at depth: UInt) {
 
     topRight = QuadTreeChild()

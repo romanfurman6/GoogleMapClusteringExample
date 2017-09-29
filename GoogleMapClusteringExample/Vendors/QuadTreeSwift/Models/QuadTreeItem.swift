@@ -11,3 +11,9 @@ import Foundation
 struct QuadTreeItem {
   let point: QuadTreePoint
 }
+
+extension QuadTreeItem: Equatable {
+  static func == (lhs: QuadTreeItem, rhs: QuadTreeItem) -> Bool {
+    return lhs.point == rhs.point
+  }
+}

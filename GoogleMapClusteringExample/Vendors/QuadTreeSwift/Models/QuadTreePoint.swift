@@ -12,3 +12,9 @@ struct QuadTreePoint {
   let x: Double
   let y: Double
 }
+
+extension QuadTreePoint: Equatable {
+  static func == (lhs: QuadTreePoint, rhs: QuadTreePoint) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y
+  }
+}

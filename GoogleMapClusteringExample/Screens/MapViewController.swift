@@ -13,13 +13,13 @@ import RxCocoa
 
 final class MapViewController: UIViewController, StoryboardInitializable {
 
-//  @IBOutlet weak var mapView: GMSMapView!
+  @IBOutlet weak var mapView: GMSMapView!
 
   override var prefersStatusBarHidden: Bool { return true }
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+
   }
   
 }

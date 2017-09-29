@@ -17,6 +17,11 @@
 		5F99D1C51F7D03DD00D4BBBA /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F99D1C41F7D03DD00D4BBBA /* MapViewController.storyboard */; };
 		5F99D1C81F7D046B00D4BBBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99D1C71F7D046B00D4BBBA /* Extensions.swift */; };
 		5F99D1CA1F7D06C800D4BBBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99D1C91F7D06C800D4BBBA /* Constants.swift */; };
+		5FFB391C1F7E8E4E00E46A27 /* QuadTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB391B1F7E8E4E00E46A27 /* QuadTree.swift */; };
+		5FFB391E1F7E8E8300E46A27 /* QuadTreeBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB391D1F7E8E8300E46A27 /* QuadTreeBounds.swift */; };
+		5FFB39201F7E8E9000E46A27 /* QuadTreePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB391F1F7E8E9000E46A27 /* QuadTreePoint.swift */; };
+		5FFB39221F7E946A00E46A27 /* QuadTreeChild.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB39211F7E946A00E46A27 /* QuadTreeChild.swift */; };
+		5FFB39241F7E947300E46A27 /* QuadTreeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FFB39231F7E947300E46A27 /* QuadTreeItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +94,11 @@
 		5FF842731F7D20A100EF910B /* RxGMSCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGMSCircle.swift; sourceTree = "<group>"; };
 		5FF842741F7D20A100EF910B /* RxGMSOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGMSOverlay.swift; sourceTree = "<group>"; };
 		5FF842751F7D20A100EF910B /* RxGoogleMapsBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxGoogleMapsBridge.swift; sourceTree = "<group>"; };
+		5FFB391B1F7E8E4E00E46A27 /* QuadTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTree.swift; sourceTree = "<group>"; };
+		5FFB391D1F7E8E8300E46A27 /* QuadTreeBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreeBounds.swift; sourceTree = "<group>"; };
+		5FFB391F1F7E8E9000E46A27 /* QuadTreePoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreePoint.swift; sourceTree = "<group>"; };
+		5FFB39211F7E946A00E46A27 /* QuadTreeChild.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreeChild.swift; sourceTree = "<group>"; };
+		5FFB39231F7E947300E46A27 /* QuadTreeItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreeItem.swift; sourceTree = "<group>"; };
 		87954E3403FA3A224A830248 /* Pods-GoogleMapClusteringExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapClusteringExampleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapClusteringExampleTests/Pods-GoogleMapClusteringExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9B21B93DACF8D61F61085F78 /* Pods-GoogleMapClusteringExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapClusteringExample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapClusteringExample/Pods-GoogleMapClusteringExample.debug.xcconfig"; sourceTree = "<group>"; };
 		EC5542A11BE85F19D3648428 /* Pods_GoogleMapClusteringExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapClusteringExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -186,6 +196,8 @@
 		5F99D1CC1F7D077D00D4BBBA /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				5FFB391A1F7E8DEE00E46A27 /* QuadTreeSwift */,
+				5FFB39191F7E8DE300E46A27 /* ClusteringSwift */,
 				5FF8426A1F7D208200EF910B /* RxGoogleMaps */,
 				5F99D1CF1F7D07F200D4BBBA /* QuadTree */,
 				5F99D1CE1F7D07E900D4BBBA /* Clustering */,
@@ -272,6 +284,33 @@
 				5FF842751F7D20A100EF910B /* RxGoogleMapsBridge.swift */,
 			);
 			path = RxGoogleMaps;
+			sourceTree = "<group>";
+		};
+		5FFB39191F7E8DE300E46A27 /* ClusteringSwift */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClusteringSwift;
+			sourceTree = "<group>";
+		};
+		5FFB391A1F7E8DEE00E46A27 /* QuadTreeSwift */ = {
+			isa = PBXGroup;
+			children = (
+				5FFB391B1F7E8E4E00E46A27 /* QuadTree.swift */,
+				5FFB39211F7E946A00E46A27 /* QuadTreeChild.swift */,
+				5FFB39251F7EA3D200E46A27 /* Models */,
+			);
+			path = QuadTreeSwift;
+			sourceTree = "<group>";
+		};
+		5FFB39251F7EA3D200E46A27 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5FFB39231F7E947300E46A27 /* QuadTreeItem.swift */,
+				5FFB391D1F7E8E8300E46A27 /* QuadTreeBounds.swift */,
+				5FFB391F1F7E8E9000E46A27 /* QuadTreePoint.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		BF4DF3BD933828A6DB37472A /* Pods */ = {
@@ -519,8 +558,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6557A31F7C07BA00D0CFC2 /* AppDelegate.swift in Sources */,
+				5FFB391E1F7E8E8300E46A27 /* QuadTreeBounds.swift in Sources */,
 				5F99D1C81F7D046B00D4BBBA /* Extensions.swift in Sources */,
+				5FFB391C1F7E8E4E00E46A27 /* QuadTree.swift in Sources */,
 				5F99D1C31F7D03D100D4BBBA /* MapViewController.swift in Sources */,
+				5FFB39221F7E946A00E46A27 /* QuadTreeChild.swift in Sources */,
+				5FFB39241F7E947300E46A27 /* QuadTreeItem.swift in Sources */,
+				5FFB39201F7E8E9000E46A27 /* QuadTreePoint.swift in Sources */,
 				5F99D1CA1F7D06C800D4BBBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

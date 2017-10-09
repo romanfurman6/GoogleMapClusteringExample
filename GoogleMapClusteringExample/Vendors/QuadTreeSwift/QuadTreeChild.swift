@@ -16,14 +16,17 @@ enum ChildPosition {
 }
 
 protocol QuadTreeChildProtocol {
-  var count: UInt { get }
   func add(
     _ item: QuadTreeItem,
     with bounds: QuadTreeBounds,
     at depth: UInt
   )
   func remove(_ item: QuadTreeItem, with bounds: QuadTreeBounds) -> Bool
-  func search(with bounds: QuadTreeBounds) -> [QuadTreeItem]
+  func search(
+    with searchBounds: QuadTreeBounds,
+    and ownBounds: QuadTreeBounds,
+    result: inout [QuadTreeItem]
+  )
   func split(with bounds: QuadTreeBounds, at depth: UInt)
 }
 
@@ -34,10 +37,6 @@ class QuadTreeChild: QuadTreeChildProtocol {
   private var bottomRight: QuadTreeChild? = nil
   private var bottomLeft: QuadTreeChild? = nil
   private var items = [QuadTreeItem]()
-
-  var count: UInt {
-    return 0
-  }
   private let maxElements: Int
   private let maxDepth: Int
 
@@ -126,12 +125,41 @@ class QuadTreeChild: QuadTreeChildProtocol {
     let index = items.index(where: { return $0 == item })
     if let index = index {
       items.remove(at: index)
+      return true
     }
     return false
   }
 
-  func search(with bounds: QuadTreeBounds) -> [QuadTreeItem] {
-    return []
+  func search(with searchBounds: QuadTreeBounds, and ownBounds: QuadTreeBounds, result: inout [QuadTreeItem]) {
+    if topRight != nil {
+      let topRightBounds = getBounds(of: ChildPosition.topRight(parentBounds: ownBounds))
+      let topLeftBounds = getBounds(of: ChildPosition.topLeft(parentBounds: ownBounds))
+      let bottomRightBounds = getBounds(of: ChildPosition.bottomRight(parentBounds: ownBounds))
+      let bottomLeftBounds = getBounds(of: ChildPosition.bottomLeft(parentBounds: ownBounds))
+      
+      if boundsIntersects(firstBounds: topRightBounds, secondBounds: searchBounds) {
+        topRight?.search(with: searchBounds, and: topRightBounds, result: &result)
+      }
+      if boundsIntersects(firstBounds: topLeftBounds, secondBounds: searchBounds) {
+        topLeft?.search(with: searchBounds, and: topLeftBounds, result: &result)
+      }
+      if boundsIntersects(firstBounds: bottomRightBounds, secondBounds: searchBounds) {
+        bottomRight?.search(with: searchBounds, and: bottomRightBounds, result: &result)
+      }
+      if boundsIntersects(firstBounds: bottomLeftBounds, secondBounds: searchBounds) {
+        bottomLeft?.search(with: searchBounds, and: bottomLeftBounds, result: &result)
+      }
+    } else {
+      for item in items {
+        let point = item.point
+        if (point.x <= searchBounds.maxX &&
+          point.x >= searchBounds.minX &&
+          point.y <= searchBounds.maxY &&
+          point.y >= searchBounds.minY) {
+          result.append(item)
+        }
+      }
+    }
   }
 
   func split(with bounds: QuadTreeBounds, at depth: UInt) {

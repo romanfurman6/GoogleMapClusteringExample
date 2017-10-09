@@ -18,9 +18,7 @@ protocol QuadTreeProtocol {
 
 class QuadTree: QuadTreeProtocol {
 
-  var count: UInt {
-    return root.count
-  }
+  var count: UInt = 0
   private let bounds: QuadTreeBounds
   private var root: QuadTreeChild = QuadTreeChild()
 
@@ -31,20 +29,26 @@ class QuadTree: QuadTreeProtocol {
   func add(_ item: QuadTreeItem) -> Bool {
     if beyoundBounds(item) { return false }
     root.add(item, with: bounds, at: 0)
+    count += 1
     return true
   }
 
   func searchItem(with bounds: QuadTreeBounds) -> [QuadTreeItem] {
-    return []
+    var result = [QuadTreeItem]()
+    root.search(with: bounds, and: self.bounds, result: &result)
+    return result
   }
 
   func remove(_ item: QuadTreeItem) -> Bool {
     if beyoundBounds(item) { return false }
-    return root.remove(item, with: bounds)
+    let removed = root.remove(item, with: bounds)
+    if removed { count -= 1 }
+    return removed
   }
 
   func clear() {
     root = QuadTreeChild()
+    count = 0
   }
 
   private func beyoundBounds(_ item: QuadTreeItem) -> Bool {

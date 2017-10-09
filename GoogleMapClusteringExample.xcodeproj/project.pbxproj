@@ -12,7 +12,7 @@
 		5F6557A31F7C07BA00D0CFC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6557A21F7C07BA00D0CFC2 /* AppDelegate.swift */; };
 		5F6557AA1F7C07BA00D0CFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6557A91F7C07BA00D0CFC2 /* Assets.xcassets */; };
 		5F6557AD1F7C07BA00D0CFC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6557AB1F7C07BA00D0CFC2 /* LaunchScreen.storyboard */; };
-		5F6557B81F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6557B71F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.swift */; };
+		5F8A6DC31F8240B600667E83 /* QuadTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F8A6DC21F8240B600667E83 /* QuadTreeTests.swift */; };
 		5F99D1C31F7D03D100D4BBBA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99D1C21F7D03D100D4BBBA /* MapViewController.swift */; };
 		5F99D1C51F7D03DD00D4BBBA /* MapViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F99D1C41F7D03DD00D4BBBA /* MapViewController.storyboard */; };
 		5F99D1C81F7D046B00D4BBBA /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F99D1C71F7D046B00D4BBBA /* Extensions.swift */; };
@@ -77,8 +77,8 @@
 		5F6557AC1F7C07BA00D0CFC2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F6557AE1F7C07BA00D0CFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5F6557B31F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GoogleMapClusteringExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5F6557B71F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleMapClusteringExampleTests.swift; sourceTree = "<group>"; };
 		5F6557B91F7C07BA00D0CFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F8A6DC21F8240B600667E83 /* QuadTreeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuadTreeTests.swift; sourceTree = "<group>"; };
 		5F99D1C21F7D03D100D4BBBA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5F99D1C41F7D03DD00D4BBBA /* MapViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapViewController.storyboard; sourceTree = "<group>"; };
 		5F99D1C71F7D046B00D4BBBA /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 		5F6557B61F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				5F6557B71F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.swift */,
 				5F6557B91F7C07BA00D0CFC2 /* Info.plist */,
+				5F8A6DC21F8240B600667E83 /* QuadTreeTests.swift */,
 			);
 			path = GoogleMapClusteringExampleTests;
 			sourceTree = "<group>";
@@ -573,7 +573,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F6557B81F7C07BA00D0CFC2 /* GoogleMapClusteringExampleTests.swift in Sources */,
+				5F8A6DC31F8240B600667E83 /* QuadTreeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

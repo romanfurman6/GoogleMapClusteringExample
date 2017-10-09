@@ -10,7 +10,7 @@ import Foundation
 
 protocol QuadTreeProtocol {
   var count: UInt { get }
-  func searchItem(with bounds: QuadTreeBounds) -> [QuadTreeItem]
+  func searchItems(with bounds: QuadTreeBounds) -> [QuadTreeItem]
   func add(_ item: QuadTreeItem) -> Bool
   func remove(_ item: QuadTreeItem) -> Bool
   func clear()
@@ -33,7 +33,7 @@ class QuadTree: QuadTreeProtocol {
     return true
   }
 
-  func searchItem(with bounds: QuadTreeBounds) -> [QuadTreeItem] {
+  func searchItems(with bounds: QuadTreeBounds) -> [QuadTreeItem] {
     var result = [QuadTreeItem]()
     root.search(with: bounds, and: self.bounds, result: &result)
     return result

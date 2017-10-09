@@ -27,7 +27,20 @@ class QuadTreeTests: XCTestCase {
     quadTree = QuadTree(bounds: quadTreeBounds)
   }
 
-  func testAddingItems() {
+  func testCount() {
+    addItems()
+    XCTAssertEqual(quadTree.count, 4)
+  }
+
+  func testSearchItem() {
+    addItems()
+    let testBounds = QuadTreeBounds(maxX: 5.0, maxY: 5.0, minX: 2.0, minY: 2.0)
+    let searchItems = quadTree.searchItems(with: testBounds)
+    let correctItems = [items[1],items[2],items[3],items[4]]
+    XCTAssertEqual(correctItems, searchItems)
+  }
+
+  func testAdd() {
     var result = [Bool]()
     let correctResult = [false, true, true, true, true, false]
     for index in 0..<items.count {
@@ -57,19 +70,6 @@ class QuadTreeTests: XCTestCase {
     XCTAssertEqual(items.count - 2, Int(quadTree.count))
     _ = quadTree.clear()
     XCTAssertEqual(0, quadTree.count)
-  }
-
-  func testSearch() {
-    addItems()
-    let testBounds = QuadTreeBounds(maxX: 5.0, maxY: 5.0, minX: 2.0, minY: 2.0)
-    let searchItems = quadTree.searchItem(with: testBounds)
-    let correctItems = [items[1],items[2],items[3],items[4]]
-    XCTAssertEqual(correctItems, searchItems)
-  }
-
-  func testCount() {
-    addItems()
-    XCTAssertEqual(quadTree.count, 4)
   }
 
   private func addItems() {

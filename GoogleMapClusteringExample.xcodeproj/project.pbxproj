@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		12B51ED8556A26DF779CD8C0 /* Pods_GoogleMapClusteringExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 072A97117E80775343C6AACB /* Pods_GoogleMapClusteringExampleTests.framework */; };
 		378F467C2CF4C4A55D25567B /* Pods_GoogleMapClusteringExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EC5542A11BE85F19D3648428 /* Pods_GoogleMapClusteringExample.framework */; };
+		5F0697D11F8B727F00BFBED3 /* Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697D01F8B727F00BFBED3 /* Cluster.swift */; };
+		5F0697D31F8B728600BFBED3 /* ClusterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697D21F8B728600BFBED3 /* ClusterItem.swift */; };
+		5F0697D51F8B728F00BFBED3 /* ClusterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697D41F8B728F00BFBED3 /* ClusterManager.swift */; };
+		5F0697D71F8B729F00BFBED3 /* MarkerClustering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697D61F8B729F00BFBED3 /* MarkerClustering.swift */; };
+		5F0697D91F8B72A800BFBED3 /* Static Cluster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697D81F8B72A800BFBED3 /* Static Cluster.swift */; };
+		5F0697DD1F8B738200BFBED3 /* NonHierarchicalDistanceBasedAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697DC1F8B738200BFBED3 /* NonHierarchicalDistanceBasedAlgorithm.swift */; };
+		5F0697DF1F8B739C00BFBED3 /* ClusterIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697DE1F8B739C00BFBED3 /* ClusterIconGenerator.swift */; };
+		5F0697E11F8B73A500BFBED3 /* ClusterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697E01F8B73A500BFBED3 /* ClusterRenderer.swift */; };
+		5F0697E31F8B73D500BFBED3 /* DefaultClusterIconGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697E21F8B73D500BFBED3 /* DefaultClusterIconGenerator.swift */; };
+		5F0697E51F8B73E200BFBED3 /* DefaultClusterRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697E41F8B73E200BFBED3 /* DefaultClusterRenderer.swift */; };
+		5F0697E71F8B778400BFBED3 /* ClusterAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F0697E61F8B778400BFBED3 /* ClusterAlgorithm.swift */; };
 		5F6557A31F7C07BA00D0CFC2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6557A21F7C07BA00D0CFC2 /* AppDelegate.swift */; };
 		5F6557AA1F7C07BA00D0CFC2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F6557A91F7C07BA00D0CFC2 /* Assets.xcassets */; };
 		5F6557AD1F7C07BA00D0CFC2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F6557AB1F7C07BA00D0CFC2 /* LaunchScreen.storyboard */; };
@@ -38,6 +49,17 @@
 		072A97117E80775343C6AACB /* Pods_GoogleMapClusteringExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoogleMapClusteringExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48595A8855A80C25D1FE699D /* Pods-GoogleMapClusteringExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapClusteringExampleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapClusteringExampleTests/Pods-GoogleMapClusteringExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5EFCA00ADC28F9619E53EF14 /* Pods-GoogleMapClusteringExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoogleMapClusteringExample.release.xcconfig"; path = "Pods/Target Support Files/Pods-GoogleMapClusteringExample/Pods-GoogleMapClusteringExample.release.xcconfig"; sourceTree = "<group>"; };
+		5F0697D01F8B727F00BFBED3 /* Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cluster.swift; sourceTree = "<group>"; };
+		5F0697D21F8B728600BFBED3 /* ClusterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterItem.swift; sourceTree = "<group>"; };
+		5F0697D41F8B728F00BFBED3 /* ClusterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterManager.swift; sourceTree = "<group>"; };
+		5F0697D61F8B729F00BFBED3 /* MarkerClustering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkerClustering.swift; sourceTree = "<group>"; };
+		5F0697D81F8B72A800BFBED3 /* Static Cluster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Static Cluster.swift"; sourceTree = "<group>"; };
+		5F0697DC1F8B738200BFBED3 /* NonHierarchicalDistanceBasedAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonHierarchicalDistanceBasedAlgorithm.swift; sourceTree = "<group>"; };
+		5F0697DE1F8B739C00BFBED3 /* ClusterIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterIconGenerator.swift; sourceTree = "<group>"; };
+		5F0697E01F8B73A500BFBED3 /* ClusterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterRenderer.swift; sourceTree = "<group>"; };
+		5F0697E21F8B73D500BFBED3 /* DefaultClusterIconGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultClusterIconGenerator.swift; sourceTree = "<group>"; };
+		5F0697E41F8B73E200BFBED3 /* DefaultClusterRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultClusterRenderer.swift; sourceTree = "<group>"; };
+		5F0697E61F8B778400BFBED3 /* ClusterAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClusterAlgorithm.swift; sourceTree = "<group>"; };
 		5F276BC71F7D1CA40098F5CD /* GMUCluster.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMUCluster.h; sourceTree = "<group>"; };
 		5F276BC81F7D1CA40098F5CD /* GMUMarkerClustering.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GMUMarkerClustering.h; sourceTree = "<group>"; };
 		5F276BC91F7D1CA40098F5CD /* GMUClusterManager+Testing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GMUClusterManager+Testing.h"; sourceTree = "<group>"; };
@@ -124,6 +146,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5F0697DA1F8B72AD00BFBED3 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				5F0697DC1F8B738200BFBED3 /* NonHierarchicalDistanceBasedAlgorithm.swift */,
+				5F0697E61F8B778400BFBED3 /* ClusterAlgorithm.swift */,
+			);
+			path = Algorithm;
+			sourceTree = "<group>";
+		};
+		5F0697DB1F8B72B500BFBED3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5F0697DE1F8B739C00BFBED3 /* ClusterIconGenerator.swift */,
+				5F0697E01F8B73A500BFBED3 /* ClusterRenderer.swift */,
+				5F0697E21F8B73D500BFBED3 /* DefaultClusterIconGenerator.swift */,
+				5F0697E41F8B73E200BFBED3 /* DefaultClusterRenderer.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		5F6557961F7C07BA00D0CFC2 = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +331,13 @@
 		5FFB39191F7E8DE300E46A27 /* ClusteringSwift */ = {
 			isa = PBXGroup;
 			children = (
+				5F0697D01F8B727F00BFBED3 /* Cluster.swift */,
+				5F0697D21F8B728600BFBED3 /* ClusterItem.swift */,
+				5F0697D41F8B728F00BFBED3 /* ClusterManager.swift */,
+				5F0697D61F8B729F00BFBED3 /* MarkerClustering.swift */,
+				5F0697D81F8B72A800BFBED3 /* Static Cluster.swift */,
+				5F0697DB1F8B72B500BFBED3 /* View */,
+				5F0697DA1F8B72AD00BFBED3 /* Algorithm */,
 			);
 			path = ClusteringSwift;
 			sourceTree = "<group>";
@@ -558,11 +607,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F6557A31F7C07BA00D0CFC2 /* AppDelegate.swift in Sources */,
+				5F0697E31F8B73D500BFBED3 /* DefaultClusterIconGenerator.swift in Sources */,
 				5FFB391E1F7E8E8300E46A27 /* QuadTreeBounds.swift in Sources */,
 				5F99D1C81F7D046B00D4BBBA /* Extensions.swift in Sources */,
+				5F0697E51F8B73E200BFBED3 /* DefaultClusterRenderer.swift in Sources */,
 				5FFB391C1F7E8E4E00E46A27 /* QuadTree.swift in Sources */,
+				5F0697D31F8B728600BFBED3 /* ClusterItem.swift in Sources */,
+				5F0697D91F8B72A800BFBED3 /* Static Cluster.swift in Sources */,
+				5F0697D71F8B729F00BFBED3 /* MarkerClustering.swift in Sources */,
+				5F0697E11F8B73A500BFBED3 /* ClusterRenderer.swift in Sources */,
+				5F0697E71F8B778400BFBED3 /* ClusterAlgorithm.swift in Sources */,
+				5F0697DF1F8B739C00BFBED3 /* ClusterIconGenerator.swift in Sources */,
+				5F0697D11F8B727F00BFBED3 /* Cluster.swift in Sources */,
+				5F0697DD1F8B738200BFBED3 /* NonHierarchicalDistanceBasedAlgorithm.swift in Sources */,
 				5F99D1C31F7D03D100D4BBBA /* MapViewController.swift in Sources */,
 				5FFB39221F7E946A00E46A27 /* QuadTreeChild.swift in Sources */,
+				5F0697D51F8B728F00BFBED3 /* ClusterManager.swift in Sources */,
 				5FFB39241F7E947300E46A27 /* QuadTreeItem.swift in Sources */,
 				5FFB39201F7E8E9000E46A27 /* QuadTreePoint.swift in Sources */,
 				5F99D1CA1F7D06C800D4BBBA /* Constants.swift in Sources */,
